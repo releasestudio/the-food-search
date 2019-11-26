@@ -21,11 +21,7 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  background: #000;
-}
-
-.image-container img {
-  width: 100%;
+  background: #ffffff;
 }
 
 /* App Styles */
