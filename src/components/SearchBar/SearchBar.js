@@ -1,8 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
 
-const apiKey = 'LPxrrAjxYauMBIvYRzdOfmJ385J-L7dVcc2sFx2D8qRoL_6aKQNgEtYg46vBoLhkBL7siGE7-ZXpQTXk4IrrBUm-u9_jVHP9Fxj70xUHC14aDa2XMaFj5JfV-VPbXXYx';
-
 class SearchBar extends React.Component {
   constructor(props){
     super(props);
@@ -67,26 +65,14 @@ class SearchBar extends React.Component {
   handleEnter(e) {
       if (!e) e = window.event;
       let keyCode = e.keyCode || e.which;
-      if (keyCode == '13'){
+      if (keyCode === '13'){
         this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
     e.preventDefault();
         return false;
       }
   }
 
-  autoComplete(input){
-    const fetchedText = fetch(
-      `https://api.yelp.com/v3/autocomplete?text=${input}`,
-      {headers: 
-          {Authorization: `Bearer ${apiKey}`}
-      }).then(response =>{
-          return response.json()
-      }).then(jsonResponse =>{
-        return jsonResponse.terms[0].text;
-      })
-  }
-
-  render() {
+  render(){
     return (
       <div className="SearchBar">
         <div className="SearchBar-sort-options">
@@ -95,11 +81,11 @@ class SearchBar extends React.Component {
           </ul>
         </div>
         <div className="SearchBar-fields">
-          <input placeholder="Search Businesses" onChange={this.handleTermChange} onKeyPress={this.handleEnter}/>
+          <input placeholder="Search Retaurant Type" onChange={this.handleTermChange} onKeyPress={this.handleEnter}/>
           <input placeholder="Where?" onChange={this.handleLocationChange} onKeyPress={this.handleEnter} />
         </div>
         <div className="SearchBar-submit">
-          <a onClick={this.handleSearch}>Let's Go</a>
+          <button onClick={this.handleSearch}>Let's Go</button>
         </div>
       </div>
     );
