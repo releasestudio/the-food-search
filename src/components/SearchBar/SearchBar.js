@@ -63,7 +63,7 @@ class SearchBar extends React.Component {
     });
   };
   handleEnter(e){
-    if (e.charCode == 13) {
+    if (e.charCode === 13) {
       this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
       e.preventDefault();
     }
