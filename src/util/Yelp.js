@@ -9,6 +9,7 @@ const Yelp = {
                 response =>{ return response.json(); }
             ).then(
                 jsonResponse =>{ if (jsonResponse.businesses){ 
+                    if(jsonResponse.businesses[0]){
                     return jsonResponse.businesses.map( business =>{
                         console.log(business)
                         return {
@@ -23,8 +24,11 @@ const Yelp = {
                             rating: business.rating,
                             reviewCount: business.review_count,
                         };
-                    })
-                }}
+                    })}else{return null}
+                }else{
+                    return null;
+                }
+            }
             );
     }
 };
