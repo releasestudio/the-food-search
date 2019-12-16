@@ -62,14 +62,11 @@ class SearchBar extends React.Component {
       );
     });
   };
-  handleEnter(e) {
-      if (!e) e = window.event;
-      let keyCode = e.keyCode || e.which;
-      if (keyCode === '13'){
-        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
-    e.preventDefault();
-        return false;
-      }
+  handleEnter(e){
+    if (e.charCode == 13) {
+      this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+      e.preventDefault();
+    }
   }
 
   render(){

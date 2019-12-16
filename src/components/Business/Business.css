@@ -28,22 +28,15 @@ a img {
   margin: 0;
   padding: 0;
 }
-.Business .Google-maps-link:link {
-  color: inherit;
-  text-decoration: none;
-}
-.Business .Google-maps-visited:link {
+.Business .Google-maps-link {
   color: black;
   text-decoration: none;
 }
-.Business .Google-maps-hover:link {
-  color: inherit;
-  text-decoration: none;
+
+.Business .Google-maps-link:hover {
+  text-decoration: underline;
 }
-.Business .Google-maps-active:link {
-  color: inherit;
-  text-decoration: none;
-}
+
 
 .Business h2 {
   margin-bottom: .5rem;
@@ -77,9 +70,14 @@ a img {
   text-align: right;
 }
 
-.Business-reviews h3 {
-  color: #CCA353;
-  font-weight: 600;
+.Business-reviews a{
+  text-decoration: none;
+  color: black;
+}
+
+.Business-reviews a:hover{
+  text-decoration: underline;
+  color: black;
 }
 
 .Business-reviews .rating {

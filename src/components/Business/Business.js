@@ -24,8 +24,12 @@ class Business extends React.Component {
             </div>
           </a>
           <div className="Business-reviews">
-            <h3 className="rating">{`${business.rating} stars`}</h3>
-            <p>{`${business.reviewCount} reviews`}</p>
+            <a href={business.url} target="_blank" rel="noopener noreferrer">
+              <h3 className="rating">{`${business.rating} stars`}</h3>
+            </a>
+            <a href={business.url} target="_blank" rel="noopener noreferrer">
+              <p>{`${business.reviewCount} reviews`}</p>
+            </a>
           </div>
         </div>
       </div>

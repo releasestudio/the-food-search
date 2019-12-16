@@ -3,22 +3,18 @@ import './BusinessList.css';
 
 import Business from '../Business/Business';
 
-class BusinessList extends React.Component {
+export default function BusinessList(props){
 
-  render(){
-    return (
-      <div className="BusinessList">
-        {
-          this.props.businesses?
-          this.props.businesses.map((business) => {
-            return <Business key={business.id} business={business} />
-          })
-          :
-          <h3>No results found</h3>
-        }
-      </div>
-    );
-  }
+  return (
+    <div className="BusinessList">
+      {
+        props.businesses?
+        props.businesses.map((business) => {
+          return <Business key={business.id} business={business} />
+        })
+        :
+        <h3>No results found</h3>
+      }
+    </div>
+  );
 }
-
-export default BusinessList;
