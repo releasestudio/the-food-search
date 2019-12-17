@@ -1,10 +1,10 @@
-const apiKey = 'LPxrrAjxYauMBIvYRzdOfmJ385J-L7dVcc2sFx2D8qRoL_6aKQNgEtYg46vBoLhkBL7siGE7-ZXpQTXk4IrrBUm-u9_jVHP9Fxj70xUHC14aDa2XMaFj5JfV-VPbXXYx';
+const yelpApiKey = "LPxrrAjxYauMBIvYRzdOfmJ385J-L7dVcc2sFx2D8qRoL_6aKQNgEtYg46vBoLhkBL7siGE7-ZXpQTXk4IrrBUm-u9_jVHP9Fxj70xUHC14aDa2XMaFj5JfV-VPbXXYx";
 const Yelp = {
     search(term, location, sortBy){
         return fetch(
             `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}&limit=9`,
             {headers: 
-                {Authorization: `Bearer ${apiKey}`}
+                {Authorization: `Bearer ${yelpApiKey}`}
             }).then(
                 response =>{ return response.json(); }
             ).then(
@@ -30,6 +30,6 @@ const Yelp = {
                 }
             }
             );
-    }
+        }
 };
 export default Yelp;
