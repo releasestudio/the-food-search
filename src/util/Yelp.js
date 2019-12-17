@@ -1,4 +1,4 @@
-const yelpApiKey = "LPxrrAjxYauMBIvYRzdOfmJ385J-L7dVcc2sFx2D8qRoL_6aKQNgEtYg46vBoLhkBL7siGE7-ZXpQTXk4IrrBUm-u9_jVHP9Fxj70xUHC14aDa2XMaFj5JfV-VPbXXYx";
+const yelpApiKey = "c5UDJReMGSyMR6Frk2gSd9_DTgG2BWCFA-0P_UUG03gCHylhnuavlXoA8tGsGO4UP0HMrRZDaHTBRymPkHp_LHqoweDpOY2_FUSh8WL6hBJr-O2UAOMqFVvGASj4XXYx";
 const Yelp = {
     search(term, location, sortBy){
         return fetch(
@@ -11,7 +11,7 @@ const Yelp = {
                 jsonResponse =>{ if (jsonResponse.businesses){ 
                     if(jsonResponse.businesses[0]){
                     return jsonResponse.businesses.map( business =>{
-                        console.log(business)
+                        // console.log(business)
                         return {
                             id: business.id,
                             imageSrc: business.image_url,
